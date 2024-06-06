@@ -7,7 +7,7 @@ const ProductDetail = () => {
     const { prodId } = useParams();
     const dispatch = useDispatch();
     const data = useSelector(getProductDetail);
-    console.log(data)
+    // console.log(data)
     useEffect(() => {
         dispatch(fetchAsyncProductDetails(prodId));
         return () => {
@@ -19,7 +19,15 @@ const ProductDetail = () => {
             {Object.keys(data).length === 0 ? (
                 <div>...Loading</div>
             ) : (
-                <div>Details</div>
+                <div>
+                    <p> {data.name} </p>
+                    <p> {data.category} </p>
+                    <p> {data.company} </p>
+                    <p> {data.inStock} </p>
+                    <p> {data.price} </p>
+                    {/* <p> {data.name} </p> */}
+                    {/* <button onClick={() => addToCart(prodId)}>Add to cart</button> */}
+                </div>
             )
             }
         </div>

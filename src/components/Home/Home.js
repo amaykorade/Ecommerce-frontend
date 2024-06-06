@@ -5,16 +5,12 @@ import { fetchAsyncProducts } from '../../features/products/productSlice'
 
 export default function Home() {
 
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(fetchAsyncProducts())
-    }, [dispatch])
 
     return (
         <div className='home'>
             <div></div>
-            <ProductListing />
+            {/* <ProductListing /> */}
+            Home
         </div>
     )
 }

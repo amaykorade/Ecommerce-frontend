@@ -1,25 +1,80 @@
 import React from 'react';
-import "./ProductCard.scss"
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../features/products/cartSlice';
+
 
 const ProductCard = (props) => {
     const { data } = props;
-    console.log(data)
+    const dispatch = useDispatch();
+    // console.log(data._id)
     const imageUrl = `http://localhost:3000/images/${data.imageUrl}`;
-    console.log(imageUrl);
-    return (
-        <div className='card'>
-            <div className='img'>
-                <img src={imageUrl} alt={data.name} />
-            </div>
-            <p className='price'> {data.price} </p>
-            <p className='name'> {data.name} </p>
-            <Link to={`/${data._id}`}>
-                <button className='details-btn'>See Details</button>
-            </Link>
+    // console.log(imageUrl);
+    const prodId = data._id
 
-        </div>
+    const handleAddToCart = async () => {
+        try {
+            await dispatch(addToCart(prodId)).unwrap();
+            alert("Product added to cart successfully!");
+        } catch (error) {
+            console.error("Failed to add product to cart: ", error);
+            alert("Failed to add product to cart. Please try again.");
+        }
+
+    }
+
+
+    return (
+        <>
+
+
+
+            {/* atharv */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+
+                <div
+                    key={data._id}
+                    className="bg-white shadow-md flex flex-col justify-between"
+                >
+                    <img
+                        src={imageUrl}
+                        alt={data.name}
+                        className="w-full h-auto object-contain"
+                    />
+                    <div className="flex flex-col justify-center p-4">
+                        <h2 className="text-lg font-semibold mb-2 text-center">
+                            {data.name}
+                        </h2>
+                        <p className="text-gray-500 mb-2 text-center">
+                            Price: ₹{data.price}
+                        </p>
+                        <Link to={`/${data._id}`}>
+                            <button className="bg-orange-500 text-white px-4 py-2 hover:bg-orange-600 self-center">See Details</button>
+                        </Link>
+                        <button className="bg-orange-500 text-white px-4 py-2 hover:bg-orange-600 self-center"
+                            onClick={handleAddToCart}
+                        >
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </>
     );
 };
 
 export default ProductCard;
+
+
+// {/* <div className='card'>
+// <div className='img'>
+//     {/* <img src={imageUrl} alt={data.name} /> */}
+// </div>
+// <p className='price'> {data.price} </p>
+// <p className='name'> {data.name} </p>
+// <Link to={`/${data._id}`}>
+//     <button className='details-btn'>See Details</button>
+// </Link>
+// <button onClick={handleAddToCart}>Add to cart</button>
+// </div> */}
