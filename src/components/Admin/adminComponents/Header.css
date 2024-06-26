@@ -1,0 +1,17 @@
+/* .page-content {
+    height: 205px;
+}*/
+.page-content .header-subsection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    color: #53c5cd;
+    font-family: "Lato", sans-serif;
+    text-align: left;
+    margin: 0px 85px 0px 35px ;
+  }
+  .reload-icon {
+    font-size: large; 
+    cursor: pointer;
+  }

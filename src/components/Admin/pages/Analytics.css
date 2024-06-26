@@ -1,0 +1,229 @@
+.analytics-div-section {
+    display: flex;
+    height: 100vh;
+  }
+  .admin-pannel-section {
+    width: calc(100vw - 300px);
+    margin-left: 300px;
+  }
+  .heading h1 {
+    margin-left: 35px;
+    margin-bottom: 32px;
+    font-family: monospace;
+    color: #117b82;
+    font-size: 35px;
+    margin-top: 10px;
+    font-family: "Lato", sans-serif;
+    margin-top: 58px;
+  }
+  .header-section-line {
+    width: 90%;
+    border: 1px solid #53c5cd;
+    margin-left: 35px;
+    margin-top: 10px;
+  }
+  .page-content p {
+    font-family: "Lato", sans-serif;
+  }
+  
+  #btn {
+    margin-left: 90rem;
+    padding: 7px 10px;
+    font-size: 1rem;
+    margin-top: 10px;
+    color: white;
+    background-color: #117b82;
+    border-radius: 5px;
+    width: 100px;
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+  }
+  
+  .analytics-container {
+    margin-top: 10px;
+    margin-left: 25px;
+    border-radius: 5px;
+    display: flex;
+  }
+  
+  .dropdown-container1 {
+    margin: 10px 20px;
+    background-color: rgb(248,247,247);
+    border-radius: 0rem;
+    width: 272px;
+    height: 255px;
+    max-height: 400px;
+    position: relative;
+  }
+  .dropdown-container1 h2 {
+    margin: 10px;
+    font-size: 16px;
+    font-family: "Poppins";
+    font-weight: 500;
+  }
+  .dropdown-container1 h1 {
+    font-size: 48px;
+    margin: 55px 0px;
+    text-align: center;
+    font-family: monospace;
+    color: #117b82;
+  }
+  .dropdown-container1 p {
+    font-size: 14px;
+    font-family: "Poppins";
+    font-weight: 500;
+  }
+  .users-info-section hr {
+    border: 1px solid #53c5cd;
+    margin: 16px;
+  }
+  .users-info-section {
+    background-color: rgb(248,247,247);
+    height: 255px;
+  }
+  .users-info-section .registered-users label {
+    margin: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+   
+  }
+  .registered-users p {
+    font-size: 2.5rem;
+    margin: 10px 0px 10px;
+    text-align: center;
+    color: #117b82;
+  }
+  .learn-more-section {
+    font-size: 14px;
+    font-family: "Poppins";
+    font-weight: 500;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(248,247,247);
+    animation: ease-in 2s;
+  }
+  
+  /* second box */
+  .dropdown-container2 {
+    margin: 10px 20px;
+    background-color: rgb(248,247,247);
+    border-radius: 0rem;
+    width: 272px;
+    height: 255px;
+    position: relative;
+  }
+  .dropdown-container2 h2 {
+    font-size: 16px;
+    margin: 10px;
+    font-family: "Poppins";
+    font-weight: 500;
+  }
+  .dropdown-container2 h1 {
+    font-size: 48px;
+    margin: 55px 0px;
+    text-align: center;
+    font-family: monospace;
+    color: #117b82;
+  }
+  .project-info-section{
+    background-color: rgb(248,247,247);
+  }
+  .project-info-section hr {
+    border: 1px solid #53c5cd;
+    margin: 16px;
+  }
+  .twod-design-info  {
+    margin: 8px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+  .twod-design-info span{
+    font-family: 'Poppis', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+  
+  }
+  .twod-design-info p{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    color: #117b82;
+    text-align: center;
+    font-weight: 500;
+  }
+  .threed-design-info  {
+    margin: 8px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+  .threed-design-info span{
+    font-family: 'Poppis', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .threed-design-info p{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    color: #117b82;
+    text-align: center;
+    font-weight: 500;
+  }
+  .combo-design-info  {
+    margin: 8px 8px 0px 8px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+  .combo-design-info span{
+    font-family: 'Poppis', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .combo-design-info p{
+  
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    color: #117b82;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  /* container no 3 */
+  .dropdown-container3 {
+    margin: 10px 20px;
+    background-color: rgb(248,247,247);
+    border-radius: 0rem;
+    width: 272px;
+    position: relative;
+  }
+  .dropdown-container3 h2 {
+    font-size: 16px;
+    margin: 10px;
+    font-family: "Poppins";
+    font-weight: 500;
+  }
+  .dropdown-container3 h1 {
+    font-size: 48px;
+    margin: 55px 0px;
+    text-align: center;
+    font-family: monospace;
+    color: #117b82;
+  }
+  .dropdown-container3 p {
+    margin: 10px 10px 15px;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+  
+  .analy-i {
+    font-size: 28px;
+    cursor: pointer;
+  }

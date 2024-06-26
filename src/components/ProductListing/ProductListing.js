@@ -1,22 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAsyncProducts, getAllProducts } from '../../features/products/productSlice';
+import { fetchAsyncProducts, fetchFilterProducts, getAllProducts } from '../../features/products/productSlice';
 import ProductCard from '../ProductCard/ProductCard';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-
-const cardVariants = {
-    hidden: { opacity: 0.4, y: -50 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 1.8,
-            ease: "easeInOut",
-        },
-    },
-};
+import { ProductListStyled } from './ProductListing.styled';
 
 
 const ProductListing = () => {
@@ -28,55 +16,92 @@ const ProductListing = () => {
     }, [dispatch])
 
     const products = useSelector(getAllProducts);
-    // console.log(products);
+    // const status = useSelector(state => sta)
+    // // console.log(products);
+
+
+    const [filters, setFilters] = useState({
+        category: '',
+        company: '',
+        minPrice: '',
+        maxPrice: ''
+    })
+
+    const handleFilterChange = (e) => {
+        const { name, value } = e.target;
+        setFilters({
+            ...filters,
+            [name]: value,
+        })
+    }
+
+    const handleApplyFilters = () => {
+        const activeFilters = Object.fromEntries(
+            Object.entries(filters).filter(([_, value]) => value !== '' && value !== null)
+        );
+        dispatch(fetchFilterProducts(activeFilters));
+    }
+
+    if (!products || products.length === 0) {
+        return <div className='no-products'>No products found.</div>;
+    }
+
     const renderProducts = products.map((product) => {
         return <ProductCard key={product.id} data={product} />
     })
 
-    const controls = useAnimation();
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.1,
-    });
-
-    React.useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        }
-    }, [controls, inView]);
-
-
     return (
-        // <div className='product-list'>
-        //     {renderProducts}
-        // </div>
+
+
         <>
-            <motion.div
-                className="container mx-auto px-4 lg:px-18 py-8"
-                ref={ref}
-                variants={cardVariants}
-                initial="hidden"
-                animate={controls}
-            >
-                <h1 className="text-3xl font-bold mb-8">Products</h1>
-                <div className="flex justify-between mb-4">
-                    <div>
-                        <label htmlFor="sortBy">Sort by:</label>
-                        <select
-                            id="sortBy"
-                            className="ml-2 px-2 py-1 border rounded"
-                        // onChange={(e) => sortProducts(e.target.value)}
-                        >
-                            <option value="lowToHigh">Price Low to High</option>
-                            <option value="highToLow">Price High to Low</option>
-                        </select>
+            <ProductListStyled>
+
+                <div className='products-main'>
+                    <div className='filter-section'>
+                        <div className='filter-group'>
+                            <label>Company</label>
+                            <select name='category' value={filters.category} onChange={handleFilterChange} >
+                                <option value="" >All Brands</option>
+                                <option value="drum">Drum</option>
+                                <option value="guitar" >guitar</option>
+                                <option value="category 3" >Category 3</option>
+                            </select>
+                        </div>
+                        <div className='filter-group'>
+                            <label>Category</label>
+                            <select name="company" value={filters.company} onChange={handleFilterChange}>
+                                <option value="">All Companies</option>
+                                <option value="yamaha">Yamaha</option>
+                                <option value="heco">Heco</option>
+                                <option value="kesh">kesh</option>
+                            </select>
+                        </div>
+                        <div className='filter-group'>
+                            <label>Price</label>
+                            <input
+                                type="number"
+                                name="minPrice"
+                                placeholder="Min Price"
+                                value={filters.minPrice}
+                                onChange={handleFilterChange}
+                            />
+                            <input
+                                type="number"
+                                name="maxPrice"
+                                placeholder="Max Price"
+                                value={filters.maxPrice}
+                                onChange={handleFilterChange}
+                            />
+                        </div>
+                        <button className='btn' onClick={handleApplyFilters}>Apply Filters</button>
+                    </div>
+                    <h2>Products</h2>
+                    <div></div>
+                    <div className='product-list'>
+                        {renderProducts}
                     </div>
                 </div>
-
-                {/* Product cards which will give all the products from site. */}
-                {renderProducts}
-
-            </motion.div>
+            </ProductListStyled>
         </>
     );
 };

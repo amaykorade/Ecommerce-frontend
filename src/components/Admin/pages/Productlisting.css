@@ -1,0 +1,10 @@
+.analytics-div-section {
+    display: flex;
+  }
+  .admin-pannel-section {
+    width: calc(100vw - 300px);
+    margin-left: 300px;
+  }
+  .product-list-section {
+    padding: 5px 36px ;
+  }

@@ -4,11 +4,15 @@ let url = `http://localhost:3000/api`
 
 export const fetchAsyncCart = createAsyncThunk('cart/fetchAsyncCart', async () => {
     try {
-        const response = await fetch(`${url}/cart`);
-        // const cartItems = await response.json();
+        const response = await fetch(`${url}/cart`, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+
+            },
+        });
+
         const data = await response.json();
-        // const data = cartItems.cartItems;
-        // console.log(" original data ", data)
+
         return data;
 
     } catch (error) {
@@ -26,6 +30,7 @@ export const addToCart = createAsyncThunk('cart/addToCart', async (productID) =>
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
             },
             body: JSON.stringify({ productID }),
         });
@@ -46,6 +51,9 @@ export const removeFromCart = createAsyncThunk('cart/removeFromCart', async (pro
     try {
         const response = await fetch(`${url}/cart/${prodId}`, {
             method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
         });
         if (!response.ok) {
             const errorText = await response.text();
@@ -82,6 +90,7 @@ const cartSlice = createSlice({
             .addCase(fetchAsyncCart.fulfilled, (state, { payload }) => {
                 state.status = 'succeeded';
                 state.cartItems = payload.cartItems || [];
+                state.grandTotal = payload.grandTotal
             })
             .addCase(fetchAsyncCart.rejected, (state, { error }) => {
                 state.status = 'failed';
@@ -90,6 +99,7 @@ const cartSlice = createSlice({
             .addCase(addToCart.fulfilled, (state, { payload }) => {
                 console.log("Added to cart successfully");
                 state.cartItems.push(payload);
+
             })
             .addCase(removeFromCart.fulfilled, (state, { payload }) => {
                 console.log("Removed from cart successfully");
@@ -101,6 +111,7 @@ const cartSlice = createSlice({
 });
 
 export const selectCartItems = (state) => state.cart.cartItems;
+export const selectCartTotal = (state) => state.cart.grandTotal;
 export const selectCartStatus = (state) => state.cart.status;
 export const selectCartError = (state) => state.cart.error;
 
