@@ -34,7 +34,7 @@ const ProductCard = (props) => {
 
                 <div className='info'>
                     <p className='name'> {data.name} </p>
-                    <p> {data.price} </p>
+                    <p> ₹ {data.price} </p>
                 </div>
                 <Link to={`/${data._id}`}>
                     <button className='btn1'>See Details</button>

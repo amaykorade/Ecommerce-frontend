@@ -11,6 +11,7 @@ export const FooterStyled = styled.div`
         background-color: rgb(4,31,40);
         width: 100%;
         color: white;
+        /* z-index: 100; */
     }
 
     .footer-sec{
@@ -30,13 +31,14 @@ export const FooterStyled = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: start;
         border-right: 1px solid #545454;
         /* padding-right: 10px; */
     }
     #left h4{
         font-size: 1.5rem;
         font-weight: 600;
+        margin-bottom: 20px;
     }
 
     .contact{
@@ -85,7 +87,7 @@ export const FooterStyled = styled.div`
     .media{
         display: flex;
         width: 50%;
-        margin: 50px 0 0 0;
+        margin: 20px 0 0 0;
     }
     .media img{
         margin: 0 auto  ;
@@ -103,7 +105,9 @@ export const FooterStyled = styled.div`
     }
     #right p{
         font-size: 1.2rem;
-        margin: 20px 0 0 0;
+        margin: 10px 0 0 0;
+        font-size: 1.2rem;
+        font-weight: 600;
     }
     #right ul li{
         margin: 10px 0;
@@ -113,7 +117,22 @@ export const FooterStyled = styled.div`
         padding-bottom: 20px;
     }
 
+    .footer-info{
+        /* border: 1px solid white; */
+        width: 80%;
+        margin: 1px 0;
+    }
+    .footer-info p{
+        text-align: left;
+        font-weight: 400;
+    }
+
     @media screen and (max-width: 650px) {
+
+        .footer{
+            width: 100%;
+        }
+
         #left{
             width: 100%;
         }
@@ -127,13 +146,16 @@ export const FooterStyled = styled.div`
         }
         #right{
             width: 100%;
+            display: flex;
+            flex-direction: column;
   
         }
         #right ul{
             display: flex;
+            flex-direction: column;
         }
         #right ul li{
-            margin: 5px 20px 30px 20px;
+            margin: 5px 20px 5px 20px;
         }
         .footer-sec{
             flex-direction: column;

@@ -11,23 +11,21 @@ function Footer() {
                     <div className='footer-sec'>
                         <div id='left'>
                             <h4>THE MUSICAL MART</h4>
-                            {/* <div className='contact'>
-                            <div className='contact-info'>
-                                <img src='image/mobile.png' />
-                                <p> +91 9146838750</p>
+                            <div className='footer-info'>
+                                <img />
+                                <p>1st Floor, Above Bata Showroom, Metro Pillar No 1727, Hydrebad</p>
                             </div>
-                            <div className='contact-info'>
-                                <img src='image/email.png' />
-                                <p>xyz@gmail.com</p>
+                            <div className='footer-info'>
+                                <img />
+                                <p>Tollfree: 1800-30007784</p>
                             </div>
-                        </div> */}
-                        </div>
-                        <div id='middle'>
-                            <div className='cards'>
-                                <img src='image/razorpay.jpeg' />
-                                <img src='image/visa.png' />
-                                <img src='image/rupay.jpeg' />
-                                <img src='image/upi.jpeg' />
+                            <div className='footer-info'>
+                                <img />
+                                <p>Mobile: +91-8977-575-151</p>
+                            </div>
+                            <div className='footer-info'>
+                                <img />
+                                <p>Email: Sales@musicalstore.in</p>
                             </div>
                             <div className='media'>
                                 <Link>
@@ -42,14 +40,27 @@ function Footer() {
 
                             </div>
                         </div>
+                        <div id='middle'>
+                            <p>Payment Options</p>
+                            <div className='cards'>
+                                <img src='image/razorpay.jpeg' />
+                                <img src='image/visa.png' />
+                                <img src='image/rupay.jpeg' />
+                                <img src='image/upi.jpeg' />
+                            </div>
+
+                        </div>
                         <div id='right'>
-                            <p>Quick links</p>
+                            <p>Our Company</p>
                             <ul>
                                 <Link to='/' ><li>Home</li></Link>
                                 <Link to='/products' ><li>Products</li></Link>
                                 <Link to='/contact' ><li>Contact</li></Link>
                                 <Link to='/cart' ><li>Cart</li></Link>
                                 <Link to='/orders' ><li>Orders</li></Link>
+                                <Link to='/' ><li>Shipping & Returns</li></Link>
+                                <Link to='/' ><li>Privacy Policy</li></Link>
+                                <Link to='/' ><li>Terms and Condition</li></Link>
 
                             </ul>
                         </div>

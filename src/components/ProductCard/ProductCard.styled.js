@@ -8,7 +8,8 @@ export const ProductCardStyled = styled.div`
     /* background-color: rgb(4,31,40, 0.2); */
     border: 1px solid #cacdcf;
     background-color: #F5F7F8;
-    width: 80%;
+    width: 60%;
+    /* height: 60%; */
     margin: 20px auto;
     border-radius: 10px;
     padding: 0;
@@ -25,9 +26,9 @@ img{
     border-radius: 10px 10px 0 0;
     width: 100%;
     /* height: 220px; */
-    height: 300px;
+    /* height: 300px; */
     margin: 0 auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 .info{
     /* border: 1px solid black; */
@@ -42,7 +43,7 @@ img{
     padding-bottom: 10px;
     width: 60%;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: 600;
 }
 

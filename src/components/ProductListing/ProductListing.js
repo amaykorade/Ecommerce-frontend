@@ -63,8 +63,8 @@ const ProductListing = () => {
                             <select name='category' value={filters.category} onChange={handleFilterChange} >
                                 <option value="" >All Brands</option>
                                 <option value="drum">Drum</option>
-                                <option value="guitar" >guitar</option>
-                                <option value="category 3" >Category 3</option>
+                                <option value="guitar" >Guitar</option>
+                                <option value="category 3" >Piano</option>
                             </select>
                         </div>
                         <div className='filter-group'>
@@ -74,6 +74,7 @@ const ProductListing = () => {
                                 <option value="yamaha">Yamaha</option>
                                 <option value="heco">Heco</option>
                                 <option value="kesh">kesh</option>
+                                <option value="kesh">Kadence</option>
                             </select>
                         </div>
                         <div className='filter-group'>

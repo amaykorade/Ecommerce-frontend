@@ -477,7 +477,9 @@ export const HomeStyled = styled.div`
   }
 
   .fo-sec-main img {
+    /* object-fit: cover; */
     width: 50%;
+    /* height: 30%; */
   }
 
   .left {

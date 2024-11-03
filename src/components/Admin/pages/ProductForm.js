@@ -55,7 +55,7 @@ export default function ProductForm() {
         if (file) {
             formData.append('imageUrl', file);
         }
-        console.log(formData);
+        console.log("formdata :", formData);
         try {
             dispatch(addProduct(formData));
 

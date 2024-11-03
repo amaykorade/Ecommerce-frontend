@@ -114,14 +114,14 @@ function Cart() {
                     <div className='items'>
                         {cartItems.map((item, index) => (
                             < div key={index} className='card' >
-                                {item.productID.imageUrl ? (
+                                {item.productID && item.productID.imageUrl ? (
                                     <img src={`http://localhost:3000/images/${item.productID.imageUrl}`} alt={item.productID.name} />
                                 ) : (
                                     <div> No Image Available </div>
                                 )}
                                 < div className='info' >
-                                    <p className='name'> {item.productID.name}</p>
-                                    <p> {item.productID.price} </p>
+                                    <p className='name'> {item.productID?.name || "Unknown Product"}</p>
+                                    <p> {item.productID?.price || "Unknown Price"} </p>
                                 </div>
                                 <button className='btn1' onClick={() => handleRemoveItem(item._id)}>Remove</button>
                             </div>

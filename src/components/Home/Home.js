@@ -45,23 +45,28 @@ export default function Home() {
                             <h3>Trending Musical Instruments</h3>
                             <div className='instruments'>
                                 <div className='inst'>
-                                    <img src='https://cdn.pixabay.com/photo/2021/11/25/19/50/tape-6824489_640.jpg' />
+                                    {/* <img src='https://cdn.pixabay.com/photo/2021/11/25/19/50/tape-6824489_640.jpg' /> */}
+                                    <img src='image/guitar.jpg' />
                                     {/* <p>Guitars</p> */}
                                 </div>
                                 <div className='inst'>
-                                    <img src='https://cdn.pixabay.com/photo/2021/11/25/19/50/tape-6824489_640.jpg' />
+                                    {/* <img src='https://cdn.pixabay.com/photo/2021/11/25/19/50/tape-6824489_640.jpg' /> */}
+                                    <img src='image/fluit.jpg' />
                                     {/* <p>Guitars</p> */}
                                 </div>
                                 <div className='inst'>
-                                    <img src='https://cdn.pixabay.com/photo/2021/11/25/19/50/tape-6824489_640.jpg' />
+                                    {/* <img src='https://cdn.pixabay.com/photo/2021/11/25/19/50/tape-6824489_640.jpg' /> */}
+                                    <img src='image/clapbox.jpg' />
                                     {/* <p>Guitars</p> */}
                                 </div>
                                 <div className='inst'>
-                                    <img src='https://cdn.pixabay.com/photo/2021/11/25/19/50/tape-6824489_640.jpg' />
+                                    {/* <img src='https://cdn.pixabay.com/photo/2021/11/25/19/50/tape-6824489_640.jpg' /> */}
+                                    <img src='image/piano1.jpg' />
                                     {/* <p>Guitars</p> */}
                                 </div>
                                 <div className='inst'>
-                                    <img src='https://cdn.pixabay.com/photo/2021/11/25/19/50/tape-6824489_640.jpg' />
+                                    {/* <img src='https://cdn.pixabay.com/photo/2021/11/25/19/50/tape-6824489_640.jpg' /> */}
+                                    <img src='image/drumset.jpg' />
                                     {/* <p>Guitars</p> */}
                                 </div>
                             </div>
@@ -86,7 +91,7 @@ export default function Home() {
                                     <p>With</p>
                                     <h5>THE MUSICAL STORE</h5>
                                 </div>
-                                <img src='image/musicalmart.jpeg' />
+                                <img src='image/music-notes.jpg' />
                             </div>
 
                         </div>

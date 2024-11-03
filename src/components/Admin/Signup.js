@@ -152,7 +152,7 @@ const Signup = () => {
                     </div>
                     <button type="submit">Signup</button>
                     {status === 'loading' && <p>Loading...</p>}
-                    {error && <p>{error}</p>}
+                    {error && <p>{typeof error === 'object' ? JSON.stringify(error) : error}</p>}
                 </form>
             </div>
         </SignUpStyled>

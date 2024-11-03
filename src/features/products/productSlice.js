@@ -2,8 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-// let url = `http://localhost:3000/api/products`
-let url = `http://localhost:3000/api`
+// let url = `http://localhost:3000/api`
+let url = `https://ecommerce-backend-1z4o.onrender.com/api`
 export const fetchAsyncProducts = createAsyncThunk('products/fetchAsyncProducts', async () => {
     try {
         const response = await fetch(`${url}/products`, {
@@ -72,7 +72,7 @@ export const addProduct = createAsyncThunk('products/addProduct', async (product
             body: productData,
         });
         const data = await response.json();
-        console.log(data)
+        console.log("data :", data)
 
         if (!response.ok) {
             throw new Error(data.message || 'Could not add product');

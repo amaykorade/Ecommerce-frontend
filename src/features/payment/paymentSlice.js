@@ -1,6 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const url = `http://localhost:3000/api`;
+const url = `https://ecommerce-backend-1z4o.onrender.com/api`;
+// const url = `https://http://localhost:3001/api`;
+
 
 export const getUserOrders = createAsyncThunk('payment/getUserOrder', async () => {
     try {

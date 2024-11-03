@@ -13,6 +13,7 @@ export const HeaderStyled = styled.div`
         width: 100%;
         height: 70px;
         /* background-color: white; */
+        z-index: 100;
     }
 
     .navbar{

@@ -50,7 +50,7 @@ button{
     border-radius: 5px;
     font-weight: 600;
     color: white;
-    background-color: #1976D2;
+    background-color: rgb(4,31,40);
 }
 
 @media screen and (max-width: 1100px) {

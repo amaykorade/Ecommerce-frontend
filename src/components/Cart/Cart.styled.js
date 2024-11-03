@@ -5,6 +5,7 @@ export const CartStyled = styled.div`
 .cart-main{
     /* border: 1px solid black; */
     width: 80%;
+    /* height: 100px; */
     margin: 120px auto;
    
 }
@@ -25,7 +26,7 @@ export const CartStyled = styled.div`
 .card{
   border: 1px solid #cacdcf;
   background-color: #F5F7F8;
-    width: 50%;
+    max-width: 70%;
     margin: 20px auto;
     border-radius: 10px;
 }
@@ -33,8 +34,9 @@ img{
   border: 1px solid #cacdcf;
     border-radius: 10px 10px 0 0;
     width: 100%;
-    height: 170px;
-    object-fit: cover;
+    /* height: 300px; */
+    /* object-fit: cover; */
+    object-fit: contain;
 }
 .info{
     /* border: 1px solid black; */

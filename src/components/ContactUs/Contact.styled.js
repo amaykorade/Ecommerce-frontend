@@ -18,7 +18,7 @@ export const ContactStled = styled.div`
 
 .main{
     /* border: 1px solid red; */
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

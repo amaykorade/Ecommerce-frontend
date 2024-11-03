@@ -2,7 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // import fetchWithToken from "../../utils/api";
 import axios from "axios";
 
-const url = `http://localhost:3000/api`;
+const url = `https://ecommerce-backend-1z4o.onrender.com/api`;
+// const url = `http://localhost:3000/api`;
 
 
 
@@ -158,6 +159,7 @@ const authSlice = createSlice({
                 state.user = action.payload.user;
                 state.token = action.payload.token;
                 localStorage.setItem('token', action.payload);
+                localStorage.setItem('user', JSON.stringify(action.payload.user));
             })
             .addCase(loginUser.rejected, (state, action) => {
                 state.status = 'failed';
@@ -168,9 +170,9 @@ const authSlice = createSlice({
             })
             .addCase(signupUser.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                state.user = action.payload;
-                // state.token = action.payload;
-                // localStorage.setItem('token', action.payload);
+                state.user = action.payload.user;
+                state.token = action.payload.token;
+                localStorage.setItem('token', action.payload.token);
             })
             .addCase(signupUser.rejected, (state, action) => {
                 state.status = 'failed';
@@ -183,6 +185,7 @@ const authSlice = createSlice({
             .addCase(getCurrentUser.fulfilled, (state, action) => {
                 state.status = 'succeeded';
                 state.user = action.payload;
+                localStorage.setItem('user', JSON.stringify(action.payload));
             })
             .addCase(getCurrentUser.rejected, (state, action) => {
                 state.status = 'failed';
@@ -221,7 +224,7 @@ export const { logout } = authSlice.actions;
 // export const { logout } = authSlice.actions;
 export const selectCurrentUser = (state) => state.auth.user;
 export const selectAuthStatus = (state) => state.auth.status;
-export const selectAuthError = (state) => state.auth.error;
+export const selectAuthError = (state) => state.auth.error?.message || state.auth.error || '';
 export const selectAuthToken = (state) => state.auth.token;
 export const selectAllUsers = (state) => state.auth.allUsers;
 

@@ -16,6 +16,9 @@ const Header = () => {
     // console.log(userInfo);
     // console.log(token);
 
+    // const currentUser = JSON.parse(localStorage.getItem('user'));
+    // console.log('aa', currentUser.user.name);
+
     useEffect(() => {
         if (token) {
             dispatch(getCurrentUser());
